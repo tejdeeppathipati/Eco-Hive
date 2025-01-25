@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Eco-Hive/static/css/main.4f3aade7.css",
+    "main.js": "/Eco-Hive/static/js/main.2b475fdf.js",
+    "index.html": "/Eco-Hive/index.html",
+    "main.4f3aade7.css.map": "/Eco-Hive/static/css/main.4f3aade7.css.map",
+    "main.2b475fdf.js.map": "/Eco-Hive/static/js/main.2b475fdf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f3aade7.css",
+    "static/js/main.2b475fdf.js"
+  ]
+}
