@@ -1,0 +1,152 @@
+/* Full-page background styling */
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #aeddae; /* Light green background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Signup container styling */
+.signup-container {
+    background: #ffffff; /* White container for contrast */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Restrict max width */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Title styling */
+.signup-title {
+    font-size: 28px; /* Slightly larger title font */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Subtle dark gray for the title */
+}
+
+/* Form input styling */
+.signup-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d4d4d4; /* Light gray border */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fdfdfd; /* Subtle off-white background */
+    box-sizing: border-box; /* Ensures proper box model behavior */
+}
+
+/* Signup button styling */
+.signup-btn {
+    background-color: #f6caca; /* Soft pastel pink */
+    color: #4f4f4f; /* Subtle dark gray text */
+    font-size: 18px; /* Slightly larger for emphasis */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Ensures consistent casing */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #f4b0b0; /* Slightly darker pastel pink */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Divider styling */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: #aaa; /* Subtle light gray for the divider */
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #d4d4d4; /* Light gray divider line */
+    margin: 0 10px;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Social login buttons */
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Stack each button vertically */
+    gap: 15px; /* Add spacing between rows */
+    align-items: center; /* Center align the buttons */
+    margin-top: 20px;
+}
+
+.social-row {
+    width: 100%; /* Ensure each row takes full width */
+    display: flex;
+    justify-content: center;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: auto; /* Keep buttons sized for content */
+    text-align: center;
+}
+
+.social-btn.google {
+    background-color: #ffdd99; /* Pastel yellow */
+    color: #4f4f4f; /* Gray text */
+}
+
+.social-btn.google:hover {
+    background-color: #ffcc80;
+}
+
+.social-btn.facebook {
+    background-color: #c0e8d5; /* Pastel mint */
+    color: #4f4f4f;
+}
+
+.social-btn.facebook:hover {
+    background-color: #a8dfc2;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .signup-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .signup-title {
+        font-size: 24px;
+    }
+
+    .signup-btn {
+        font-size: 16px;
+    }
+}

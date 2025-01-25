@@ -1,0 +1,74 @@
+/* Top Bar */
+.top-bar {
+    background-color: #e6f7e6; /* Light green */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Top Bar Right Section */
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 300px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 5px;
+    width: 100%;
+}
+
+.search-bar:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+    color: #777;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}

@@ -1,0 +1,103 @@
+/* Container and Background */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e6f7e6; /* Full green background */
+    font-family: Arial, sans-serif;
+}
+
+.diy-generator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fill the viewport */
+    width: 100vw;
+    background-color: #e6f7e6; /* Match green background */
+    position: relative; /* Required for the floating action button */
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%; /* 3/4 width of the page */
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.attach-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    margin-right: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.attach-button input {
+    display: none;
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* File Preview */
+.file-preview {
+    margin-top: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Floating Action Button (Option 2) */
+.floating-action-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-action-button:hover {
+    background-color: #c1e7c1;
+    transform: scale(1.1);
+}

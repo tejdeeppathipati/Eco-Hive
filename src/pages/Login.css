@@ -1,0 +1,152 @@
+/* Full-page background styling */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #aeddae; /* Light green background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Login container styling */
+.login-container {
+    background: #ffffff; /* White container for contrast */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Restrict max width */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Title styling */
+.login-title {
+    font-size: 28px; /* Match the signup title font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Subtle dark gray for the title */
+}
+
+/* Form input styling */
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d4d4d4; /* Light gray border */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fdfdfd; /* Subtle off-white background */
+    box-sizing: border-box;
+}
+
+/* Forgot password link */
+.options {
+    text-align: left; /* Align the forgot password to the left */
+    margin-bottom: 20px;
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: #a39393; /* Subtle brown tone */
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Login button styling */
+.login-btn {
+    background-color: #f6caca; /* Soft pastel pink */
+    color: #4f4f4f; /* Subtle dark gray text */
+    font-size: 18px; /* Slightly larger for emphasis */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #f4b0b0; /* Slightly darker pastel pink on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Divider styling */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: #aaa; /* Subtle light gray for the divider */
+}
+
+.divider span {
+    flex: 1;
+    height: 1px;
+    background: #d4d4d4; /* Light gray divider line */
+    margin: 0 10px;
+}
+
+/* Social login buttons */
+.social-login {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Space between icon and text */
+}
+
+.social-btn.google {
+    background-color: #ffdd99; /* Soft pastel yellow */
+    color: #4f4f4f;
+}
+
+.social-btn.google:hover {
+    background-color: #ffcc80; /* Slightly darker pastel yellow */
+}
+
+.social-btn.facebook {
+    background-color: #c0e8d5; /* Soft pastel mint */
+    color: #4f4f4f;
+}
+
+.social-btn.facebook:hover {
+    background-color: #a8dfc2; /* Slightly darker pastel mint */
+}
+
+/* Signup prompt */
+.signup-prompt {
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-link {
+    color: #ffcc99; /* Pastel orange for links */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+    color: #ffb380; /* Slightly darker pastel orange */
+}

@@ -1,0 +1,210 @@
+/* Apply full-page green background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #E9FBEA;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full page green background without box */
+.full-page {
+  text-align: center;
+  width: 100%;
+}
+
+/* Welcome title */
+.welcome-title {
+  color: #188D38;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;  /* Align text to the left */
+  margin-left: 10%; /* Adjust this value to move it more to the left */
+}
+
+.welcome-title span {
+  color: green;
+}
+
+/* Input fields */
+input {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  background: transparent;
+}
+
+/* Forgot password */
+.forgot-password {
+  font-size: 14px;
+  color: gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Login button */
+.login-btn {
+  width: 80%;
+  padding: 12px;
+  background: #188D38;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.login-btn:hover {
+  background: #146D2A;
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.signup-link {
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: black;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: black;
+  margin: 0 10px;
+}
+
+/* Social buttons */
+.social-btn {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.social-btn:hover {
+  background: #f0f0f0;
+}
+
+.signup-container {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-title {
+  color: #188D38;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.signup-title span {
+  color: black;
+}
+
+/* Signup form inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.name-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.half-input {
+  width: 48%;
+}
+
+/* Signup button */
+.signup-btn {
+  width: 100%;
+  padding: 12px;
+  background: #188D38;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.signup-btn:hover {
+  background: #146D2A;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  color: black;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: black;
+  margin: 0 10px;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 35px;
+  cursor: pointer;
+}
+
+/* Connect text */
+.connect-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: black;
+}
+
+.connect-link {
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}

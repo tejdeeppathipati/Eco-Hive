@@ -1,0 +1,148 @@
+/* Sidebar */
+.sidebar {
+    background-color: #e6f7e6;
+    width: 250px;
+    height: calc(100vh - 60px); /* Account for top bar */
+    padding: 20px;
+    position: fixed;
+    top: 60px; /* Below the top bar */
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.nav-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #006600;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    margin-top: 60px; /* Account for top bar */
+    padding: 20px;
+}
+
+.welcome-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+    }
+}
+
+.events-section {
+    margin-top: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #3b7a57;
+    margin-bottom: 20px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.events-section .event-card {
+    margin-bottom: 15px;
+}
+

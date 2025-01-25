@@ -1,0 +1,98 @@
+/* Top Bar */
+.top-bar {
+    background-color: #e6f7e6; /* Light green */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 300px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.search-bar input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.search-bar:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #b3e6b3;
+}
+
+.search-icon {
+    color: #777;
+    font-size: 16px;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-section:hover {
+    transform: scale(1.05);
+}
+
+.profile-icon {
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis for long names */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 200px;
+    }
+
+    .profile-name {
+        display: none; /* Hide profile name on smaller screens */
+    }
+
+    .profile-icon {
+        font-size: 24px;
+    }
+}
