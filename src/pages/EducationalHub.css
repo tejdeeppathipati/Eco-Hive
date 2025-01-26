@@ -1,0 +1,85 @@
+.educational-hub-container {
+    padding: 40px;
+    background-color: #223D24; /* Dark green theme */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.hub-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #FFFFFF; /* White for contrast */
+    margin-bottom: 40px;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background: #ffffff; /* White background for cards */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.resource-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #355E3B; /* Slightly lighter green */
+    margin-bottom: 10px;
+}
+
+.resource-description {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+.read-more-link {
+    font-size: 1.1rem;
+    color: #1e88e5; /* Blue for links */
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #1e88e5;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.read-more-link:hover {
+    background: #1e88e5;
+    color: white;
+}
+
+.floating-action-button {
+    position: fixed;
+    top: 20px; /* Top-right placement */
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    color: #355E3B; /* Green for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-action-button:hover {
+    background-color: #c1e7c1; /* Light green on hover */
+    transform: scale(1.1);
+}

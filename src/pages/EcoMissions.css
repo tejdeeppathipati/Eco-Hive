@@ -1,44 +1,95 @@
+/* Body Background */
+body {
+    background-color: #223D24; /* Dark green color for the entire background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container and Background */
 .eco-missions-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    background-color: #223D24; /* Same dark green for the outer container */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-.filters {
+/* Header */
+.header {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
 }
 
 .search-bar {
-    flex: 1;
     padding: 10px;
-    font-size: 1rem;
+    border-radius: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    width: 300px;
+    background-color: #355E3B; /* Lighter shade for contrast */
+    color: white;
 }
 
-.category-filter {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+/* Host Event Section */
+.host-event-button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #355E3B; /* Same color for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.event-list {
+/* Events Section */
+.events-section {
+    margin-bottom: 40px;
+    background-color: #D9E4DD; /* Lighter green to differentiate */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Event Card */
+.event-card {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    background-color: #F0F5F3; /* Keep light background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Action Button */
+.floating-action-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-action-button:hover {
+    background-color: #c1e7c1;
+    transform: scale(1.1);
 }

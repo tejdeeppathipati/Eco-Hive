@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBBjVuLEE8h7UOAImYu9dijwSLHX4Ns7HM",
-  authDomain: "hoyahack-e2d0a.firebaseapp.com",
-  projectId: "hoyahack-e2d0a",
-  storageBucket: "hoyahack-e2d0a.firebasestorage.app",
-  messagingSenderId: "973698940044",
-  appId: "1:973698940044:web:0b88a2b62fc1866ce48fa9",
-  measurementId: "G-CY5F00S6F5"
+    apiKey: "AIzaSyBBjVuLEE8h7UOAImYu9dijwSLHX4Ns7HM",
+    authDomain: "hoyahack-e2d0a.firebaseapp.com",
+    projectId: "hoyahack-e2d0a",
+    storageBucket: "hoyahack-e2d0a.firebasestorage.app",
+    messagingSenderId: "973698940044",
+    appId: "1:973698940044:web:0b88a2b62fc1866ce48fa9",
+    measurementId: "G-CY5F00S6F5"
 };
 
 // Initialize Firebase
@@ -21,4 +23,8 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
-export { app, analytics, auth, googleProvider, facebookProvider };
+// Initialize Firestore and Storage
+const storage = getStorage(app);
+const db = getFirestore(app);
+
+export { app, analytics, auth, googleProvider, facebookProvider, storage, db };

@@ -4,29 +4,30 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #aeddae; /* Light green background */
+    background-color: #223D24; /* Dark green background */
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Login container styling */
 .login-container {
-    background: #ffffff; /* White container for contrast */
+    background: #2E5B36; /* Slightly lighter green for contrast */
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 400px; /* Restrict max width */
+    max-width: 400px;
     text-align: center;
     box-sizing: border-box;
+    color: #FFFFFF;
 }
 
 /* Title styling */
 .login-title {
-    font-size: 28px; /* Match the signup title font size */
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333; /* Subtle dark gray for the title */
+    color: #C1E7C1; /* Light green */
 }
 
 /* Form input styling */
@@ -34,22 +35,22 @@
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #d4d4d4; /* Light gray border */
-    border-radius: 5px;
+    border: 1px solid #4A7C50; /* Dark green border */
+    border-radius: 6px;
     font-size: 16px;
-    background-color: #fdfdfd; /* Subtle off-white background */
-    box-sizing: border-box;
+    background-color: #223D24; /* Darker green background */
+    color: #FFFFFF;
 }
 
 /* Forgot password link */
 .options {
-    text-align: left; /* Align the forgot password to the left */
+    text-align: left;
     margin-bottom: 20px;
 }
 
 .forgot-password {
     font-size: 14px;
-    color: #a39393; /* Subtle brown tone */
+    color: #C1E7C1;
     text-decoration: none;
 }
 
@@ -59,23 +60,21 @@
 
 /* Login button styling */
 .login-btn {
-    background-color: #f6caca; /* Soft pastel pink */
-    color: #4f4f4f; /* Subtle dark gray text */
-    font-size: 18px; /* Slightly larger for emphasis */
+    background-color: #4A7C50; /* Medium green */
+    color: #FFFFFF;
+    font-size: 18px;
     font-weight: bold;
     padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 20px;
     text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
-    background-color: #f4b0b0; /* Slightly darker pastel pink on hover */
-    color: #ffffff; /* White text on hover */
+    background-color: #3A663D; /* Darker green */
 }
 
 /* Divider styling */
@@ -84,20 +83,20 @@
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-    color: #aaa; /* Subtle light gray for the divider */
+    color: #aaa;
 }
 
 .divider span {
     flex: 1;
     height: 1px;
-    background: #d4d4d4; /* Light gray divider line */
+    background: #4A7C50; /* Green divider line */
     margin: 0 10px;
 }
 
 /* Social login buttons */
 .social-login {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
+    flex-direction: column;
     gap: 15px;
 }
 
@@ -109,44 +108,43 @@
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease;
-    gap: 10px; /* Space between icon and text */
+    gap: 10px;
 }
 
 .social-btn.google {
-    background-color: #ffdd99; /* Soft pastel yellow */
-    color: #4f4f4f;
+    background-color: #F4CCA7; /* Pastel orange */
+    color: #223D24;
 }
 
 .social-btn.google:hover {
-    background-color: #ffcc80; /* Slightly darker pastel yellow */
+    background-color: #F3B985; /* Darker pastel orange */
 }
 
 .social-btn.facebook {
-    background-color: #c0e8d5; /* Soft pastel mint */
-    color: #4f4f4f;
+    background-color: #A8DFC2; /* Mint green */
+    color: #223D24;
 }
 
 .social-btn.facebook:hover {
-    background-color: #a8dfc2; /* Slightly darker pastel mint */
+    background-color: #8CCCAC; /* Darker mint green */
 }
 
 /* Signup prompt */
 .signup-prompt {
     font-size: 14px;
-    color: #555;
+    color: #C1E7C1;
 }
 
 .signup-link {
-    color: #ffcc99; /* Pastel orange for links */
+    color: #A8DFC2;
     font-weight: bold;
     cursor: pointer;
 }
 
 .signup-link:hover {
     text-decoration: underline;
-    color: #ffb380; /* Slightly darker pastel orange */
 }

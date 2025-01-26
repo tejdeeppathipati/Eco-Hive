@@ -1,0 +1,172 @@
+.points-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #2a4d3d; /* Unified darker green background */
+    color: #ffffff; /* Default text color for better contrast */
+    min-height: 100vh; /* Full-height for consistent background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Start content from the top */
+}
+
+.points-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.points-header h1 {
+    font-size: 2.8rem; /* Larger for emphasis */
+    color: #ffffff; /* White text for better contrast */
+    font-weight: bold;
+}
+
+.points-header p {
+    color: #e2e8e4; /* Muted white text */
+    margin-bottom: 15px;
+    font-size: 1.2rem; /* Slightly larger for readability */
+}
+
+.points-tracker-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align all elements */
+    margin-bottom: 30px; /* Add spacing below */
+}
+
+.points-tracker {
+    position: relative;
+    width: 180px; /* Size of the tracker */
+    height: 180px;
+    margin-bottom: 20px;
+    display: flex; /* Use flex to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.circle-svg {
+    position: absolute; /* Ensure the circle stays behind the text */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width for proper scaling */
+    height: 100%; /* Full height for proper scaling */
+    transform: rotate(-90deg); /* Rotate the circle to start from the top */
+    overflow: visible;
+}
+
+circle {
+    transition: stroke-dashoffset 0.5s ease; /* Smooth animation for stroke */
+}
+
+.points-label {
+    position: relative; /* Adjust to align with the parent container */
+    text-align: center;
+    font-size: 1.8rem; /* Adjust size for better visibility */
+    font-weight: bold;
+    color: #ffffff; /* White text for contrast */
+}
+
+.points-label span {
+    font-size: 2rem; /* Larger font size for the points value */
+    color: #9ae6b4; /* Light green for emphasis */
+}
+
+.points-label small {
+    font-size: 1rem; /* Smaller size for 'of' text */
+    color: #e2e8e4; /* Subtle contrast */
+}
+
+.tier-display {
+    background-color: #3b7a57; /* Match theme */
+    padding: 10px 20px; /* Smaller padding for compact design */
+    border-radius: 10px; /* Rounded corners for softer look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2rem; /* Smaller font size for compactness */
+    color: #ffffff; /* White text for contrast */
+}
+
+.tier-display span {
+    font-weight: bold;
+    font-size: 1.4rem; /* Slightly smaller to match new layout */
+}
+
+.points-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add spacing between filters */
+    margin-bottom: 30px;
+    width: 100%; /* Full width for alignment */
+    max-width: 600px; /* Restrict to a clean layout */
+}
+
+.points-filters input,
+.points-filters select {
+    padding: 12px;
+    border: 1px solid #9ae6b4; /* Light green border for visibility */
+    border-radius: 8px; /* Rounded corners for smoother design */
+    font-size: 1rem;
+    background-color: #3b7a57; /* Match the green theme */
+    color: #ffffff;
+    width: 100%; /* Full width for inputs */
+    max-width: 300px; /* Restrict maximum width */
+}
+
+.points-filters input::placeholder {
+    color: #e2e8e4; /* Subtle placeholder text */
+}
+
+.points-catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Limit catalog width for balance */
+}
+
+.reward-card {
+    background: #9ae6b4; /* Light green for reward cards */
+    border: none;
+    border-radius: 15px; /* Rounded for softer design */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.reward-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.reward-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Maintain proportions */
+    margin-bottom: 10px;
+}
+
+.reward-card h3 {
+    font-size: 1.2rem;
+    color: #2a4d3d; /* Dark green for readability */
+}
+
+.reward-card p {
+    color: #2a4d3d;
+    margin: 10px 0;
+}
+
+.reward-card button {
+    background: #2a4d3d; /* Darker green button */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.reward-card button:hover {
+    background: #1b3c2b; /* Even darker green on hover */
+}

@@ -1,6 +1,6 @@
 /* Top Bar */
 .top-bar {
-    background-color: #e6f7e6; /* Light green */
+    background-color: rgba(34, 61, 36, 0.8); /* Dark green with transparency */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,63 +12,90 @@
     right: 0;
     height: 60px;
     z-index: 1000;
+    backdrop-filter: blur(6px); /* Add blur for blending effect */
 }
 
+/* App Title */
 .app-title {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #c1e7c1; /* Light green */
 }
 
 /* Top Bar Right Section */
 .top-bar-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Space between rewards and profile */
 }
 
-/* Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 5px 10px;
-    width: 300px;
-    transition: box-shadow 0.3s ease;
-}
-
-.search-bar input {
+/* Rewards Button */
+.rewards-box {
+    background: rgba(108, 175, 80, 0.9); /* Green button with transparency */
+    color: white;
     border: none;
-    outline: none;
+    border-radius: 5px;
+    padding: 8px 12px;
     font-size: 14px;
-    margin-left: 5px;
-    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.search-bar:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.search-icon {
-    color: #777;
+.rewards-box:hover {
+    background: rgba(92, 156, 69, 0.9); /* Darker green with transparency */
 }
 
 /* Profile Section */
 .profile-section {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .profile-icon {
     font-size: 24px;
-    color: #333;
+    color: #e8e8e8; /* Light green */
 }
 
 .profile-name {
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #d2d7d2;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: rgba(34, 61, 36, 0.95); /* Transparent dark green */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 200px;
+}
+
+.profile-dropdown p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.logout-button {
+    margin-top: 10px;
+    background: #FF6B6B; /* Red for logout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background: #FF4A4A; /* Darker red on hover */
 }

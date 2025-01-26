@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #aeddae; /* Light green background */
+    background-color: #223D24; /* Dark green background */
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -23,10 +23,10 @@
 
 /* Title styling */
 .signup-title {
-    font-size: 28px; /* Slightly larger title font */
+    font-size: 32px; /* Slightly larger title font */
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333; /* Subtle dark gray for the title */
+    color: #223D24; /* Dark green for title */
 }
 
 /* Form input styling */
@@ -34,18 +34,18 @@
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #d4d4d4; /* Light gray border */
+    border: 1px solid #ccc; /* Light border */
     border-radius: 5px;
     font-size: 16px;
-    background-color: #fdfdfd; /* Subtle off-white background */
-    box-sizing: border-box; /* Ensures proper box model behavior */
+    background-color: #fdfdfd; /* Light off-white background */
+    box-sizing: border-box; /* Consistent sizing */
 }
 
 /* Signup button styling */
 .signup-btn {
-    background-color: #f6caca; /* Soft pastel pink */
-    color: #4f4f4f; /* Subtle dark gray text */
-    font-size: 18px; /* Slightly larger for emphasis */
+    background-color: #355E3B; /* Dark green button */
+    color: white;
+    font-size: 18px;
     font-weight: bold;
     padding: 12px;
     border: none;
@@ -53,13 +53,12 @@
     cursor: pointer;
     width: 100%;
     margin-bottom: 20px;
-    text-transform: uppercase; /* Ensures consistent casing */
+    text-transform: uppercase; /* Consistent case */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .signup-btn:hover {
-    background-color: #f4b0b0; /* Slightly darker pastel pink */
-    color: #ffffff; /* White text on hover */
+    background-color: #2d5234; /* Slightly darker green on hover */
 }
 
 /* Divider styling */
@@ -68,42 +67,30 @@
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-    color: #aaa; /* Subtle light gray for the divider */
+    color: #555; /* Subtle gray for divider */
 }
 
 .divider span {
     flex: 1;
     height: 1px;
-    background: #d4d4d4; /* Light gray divider line */
+    background: #ccc; /* Light gray line */
     margin: 0 10px;
 }
 
 /* Social icons */
 .social-icons {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-/* Social login buttons */
-.social-icons {
-    display: flex;
-    flex-direction: column; /* Stack each button vertically */
-    gap: 15px; /* Add spacing between rows */
-    align-items: center; /* Center align the buttons */
+    flex-direction: column; /* Stack vertically */
+    gap: 15px; /* Spacing between rows */
+    align-items: center;
     margin-top: 20px;
 }
 
-.social-row {
-    width: 100%; /* Ensure each row takes full width */
-    display: flex;
-    justify-content: center;
-}
-
+/* Social login buttons */
 .social-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px; /* Space between icon and text */
     padding: 10px 20px;
     border-radius: 5px;
@@ -111,29 +98,45 @@
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease;
-    width: auto; /* Keep buttons sized for content */
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    width: 100%; /* Full-width buttons */
     text-align: center;
 }
 
 .social-btn.google {
-    background-color: #ffdd99; /* Pastel yellow */
-    color: #4f4f4f; /* Gray text */
+    background-color: #ffdd99; /* Light yellow */
+    color: #4f4f4f; /* Subtle dark text */
 }
 
 .social-btn.google:hover {
-    background-color: #ffcc80;
+    background-color: #ffcc80; /* Darker yellow */
 }
 
 .social-btn.facebook {
-    background-color: #c0e8d5; /* Pastel mint */
-    color: #4f4f4f;
+    background-color: #a8dfc2; /* Light green */
+    color: #355E3B; /* Dark green text */
 }
 
 .social-btn.facebook:hover {
-    background-color: #a8dfc2;
+    background-color: #8fd4b5; /* Darker green */
 }
 
+/* Login prompt */
+.login-prompt {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link {
+    color: #355E3B; /* Dark green for link */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
 
 /* Responsive adjustments */
 @media (max-width: 500px) {
@@ -143,7 +146,7 @@
     }
 
     .signup-title {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .signup-btn {

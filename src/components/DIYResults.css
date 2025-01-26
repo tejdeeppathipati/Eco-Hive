@@ -1,0 +1,159 @@
+/* Global Styling */
+body {
+  background-color: #f8f9fa; /* Light Background */
+  font-family: 'Poppins', sans-serif;
+  color: #212529; /* Dark Text */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* DIY Results Container */
+.diy-results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Results Header */
+.results-header {
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #1d3557; /* Dark Blue */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+  justify-items: center;
+}
+
+/* Project Card */
+.project-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-left: 6px solid #28a745; /* Green Border */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border-left-color: #218838;
+}
+
+/* Project Image */
+.project-image {
+  width: 100%;
+  max-width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 5px solid #e9ecef; /* Light Border */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Title */
+.project-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1d3557; /* Dark Blue */
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 1.1rem;
+  color: #495057; /* Dark Gray Text */
+  line-height: 1.8;
+  text-align: justify;
+  padding: 0 1rem;
+}
+
+/* Project Footer */
+.project-footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Back Button */
+.back-button {
+  padding: 0.9rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #218838, #19692c);
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Bullet Lists and Steps */
+.material-list, .steps-list {
+  padding-left: 1.8rem;
+  list-style-type: disc;
+  color: #1d3557; /* Dark Blue Bullets */
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.steps-list {
+  list-style-type: decimal;
+  color: #333; /* Black Bullets */
+}
+
+ul li::marker {
+  color: #28a745; /* Green Marker */
+  font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .results-header {
+      font-size: 2.2rem;
+  }
+
+  .projects-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .project-card {
+      padding: 2rem;
+  }
+
+  .back-button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+  }
+}

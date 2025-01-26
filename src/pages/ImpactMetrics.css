@@ -1,0 +1,234 @@
+/* Global Styling */
+body {
+    background-color: #1c2b2d; /* Dark Green Background */
+    font-family: "Roboto", sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.impact-metrics-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2e4c4f; /* Dark Green Container */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #d4edda; /* Light Green */
+}
+
+/* Goals Layout */
+.goals-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Goals Section */
+.your-goals,
+.friends-goals {
+    flex: 1;
+    background-color: #f0f5f3; /* Light Green */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Titles */
+.your-goals h2,
+.friends-goals h2 {
+    font-size: 2rem;
+    color: #4caf50; /* Green Title */
+    border-bottom: 2px solid #4caf50; /* Green Divider */
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+
+/* Horizontal Scroll */
+.horizontal-scroll {
+    display: flex;
+    gap: 20px; /* Increased spacing between goal cards */
+    overflow-x: auto;
+    padding: 10px 0; /* Vertical padding for better visibility */
+    scroll-behavior: smooth;
+}
+
+/* Goal Card */
+.goal-card {
+    background-color: #ffffff; /* White Background */
+    color: #333; /* Text Color */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    min-width: 300px; /* Adjusted for horizontal scrolling */
+    text-align: center;
+    margin-right: 10px; /* Space between cards */
+}
+
+/* Progress Container */
+.progress-container {
+    background-color: #e0e0e0; /* Light Gray Background */
+    border-radius: 8px;
+    height: 24px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50; /* Green Progress */
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+/* Dropdown for Sharing */
+.goal-card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Buttons Container */
+.button-container {
+    display: flex;
+    gap: 12px; /* Space between buttons */
+    justify-content: center; /* Center-align buttons */
+    margin-top: 8px; /* Space above buttons */
+}
+
+/* Buttons */
+.goal-card button {
+    background-color: #d9534f; /* Red Button */
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Smaller padding */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Reduced font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.goal-card button:hover {
+    background-color: #c9302c; /* Darker Red Hover */
+}
+
+/* Add Goal Form */
+.add-goal-form {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-goal-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.add-goal-form button {
+    background-color: #388e3c; /* Green Button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-goal-form button:hover {
+    background-color: #2e7d32; /* Darker Green Hover */
+}
+
+/* Friends' Goals */
+.friends-goals .goal-card p {
+    font-size: 0.9rem;
+    color: #666; /* Gray Text */
+}
+
+/* Add Friends Section */
+.add-friends-section {
+    background-color: #f0f5f3; /* Light Green */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.add-friends-section h2 {
+    font-size: 2rem;
+    color: #4caf50; /* Green Title */
+    margin-bottom: 20px;
+}
+
+/* Add Friend Form */
+.add-friend-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.add-friend-form input,
+.add-friend-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: calc(40% - 10px);
+    font-size: 1rem;
+}
+
+.add-friend-form button {
+    background-color: #388e3c; /* Green Button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-friend-form button:hover {
+    background-color: #2e7d32; /* Darker Green Hover */
+}
+
+/* Floating Action Button */
+.floating-action-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-action-button:hover {
+    background-color: #c1e7c1; /* Light Green Hover */
+    transform: scale(1.1);
+}

@@ -1,39 +1,73 @@
+/* Event Card Container */
 .event-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #f8fdf8; /* Light green */
+    border-radius: 10px;
+    margin: 15px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.event-card-image {
+/* Image Section */
+.event-image-container {
+    flex: 0 0 200px; /* Increased width for image */
+    height: 200px; /* Increased height */
+    margin-right: 20px;
+}
+
+.event-image {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+/* Event Details Section */
+.event-details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.event-tag {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #e9ecef;
-    border-radius: 12px;
-    color: #3b7a57;
-    font-size: 12px;
+.event-details-container p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* RSVP Button Section */
+.rsvp-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; /* Center-align the button */
 }
 
 .rsvp-button {
-    padding: 10px;
-    background-color: #3b7a57;
-    color: #fff;
+    padding: 10px 20px;
+    background-color: #28a745; /* Green */
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.rsvp-button:disabled {
-    background-color: #ccc;
+.rsvp-button:hover {
+    background-color: #218838;
+}
+
+.rsvp-button.registered {
+    background-color: #d3d3d3;
     cursor: not-allowed;
 }

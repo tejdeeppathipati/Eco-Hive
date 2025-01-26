@@ -1,161 +1,168 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import EventCard from "../components/EventCard";
 import "./EcoMissions.css";
+import { db } from "../firebase/firebase";
+import { collection, onSnapshot, addDoc } from "firebase/firestore";
 
 const EcoMissions = () => {
     const [events, setEvents] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("All");
-    const [showAddEventForm, setShowAddEventForm] = useState(false);
+    const navigate = useNavigate();
+    const [showHostForm, setShowHostForm] = useState(false);
     const [newEvent, setNewEvent] = useState({
         name: "",
         date: "",
         time: "",
         location: "",
-        tags: "",
+        description: "",
         image: "",
     });
 
+    // Fetch real-time events from Firebase
     useEffect(() => {
-        const sampleEvents = [
-            {
-                id: 1,
-                name: "Beach Cleanup",
-                date: "2025-01-30",
-                time: "9:00 AM - 12:00 PM",
-                location: "Oceanfront",
-                tags: ["Clean-Up", "Community"],
-                image: "/images/beachcleanup.jpg",
-            },
-            {
-                id: 2,
-                name: "Tree Planting Drive",
-                date: "2025-02-05",
-                time: "10:00 AM - 2:00 PM",
-                location: "Central Park",
-                tags: ["Environment", "Volunteer"],
-                image: "/images/plant.jpeg",
-            },
-        ];
-        setEvents(sampleEvents);
+        const unsubscribe = onSnapshot(collection(db, "events"), (snapshot) => {
+            const fetchedEvents = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setEvents(fetchedEvents);
+        });
+
+        return () => unsubscribe();
     }, []);
 
-    const filteredEvents = events.filter((event) => {
-        const matchesSearch = event.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesCategory = selectedCategory === "All" || event.tags.includes(selectedCategory);
-        return matchesSearch && matchesCategory;
-    });
-
-    const handleAddEventToggle = () => {
-        setShowAddEventForm((prev) => !prev);
-    };
-
-    const handleAddEventChange = (e) => {
-        const { name, value } = e.target;
-        setNewEvent((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleAddEventSubmit = (e) => {
-        e.preventDefault();
-        if (!newEvent.name || !newEvent.date || !newEvent.time || !newEvent.location) {
+    // Add new event to Firebase
+    const handleAddEvent = async () => {
+        if (!newEvent.name || !newEvent.date || !newEvent.time || !newEvent.location || !newEvent.image) {
             alert("Please fill in all required fields.");
             return;
         }
-        const tagsArray = newEvent.tags.split(",").map((tag) => tag.trim());
-        const eventToAdd = { ...newEvent, tags: tagsArray, id: events.length + 1 };
-        setEvents((prev) => [...prev, eventToAdd]);
-        setNewEvent({ name: "", date: "", time: "", location: "", tags: "", image: "" });
-        setShowAddEventForm(false);
+
+        try {
+            await addDoc(collection(db, "events"), {
+                ...newEvent,
+            });
+            alert("Event added successfully!");
+            setNewEvent({
+                name: "",
+                date: "",
+                time: "",
+                location: "",
+                description: "",
+                image: "",
+            });
+            setShowHostForm(false); // Hide form after submission
+        } catch (error) {
+            console.error("Error adding event: ", error);
+        }
+    };
+
+    // Filter events
+    const filteredEvents = events.filter((event) =>
+        event.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    // Handle navigation to home
+    const handleBackToHome = () => {
+        navigate("/dashboard");
     };
 
     return (
         <div className="eco-missions-container">
-            <h1>Eco Missions</h1>
-            <p>Discover and participate in sustainability events near you.</p>
-            <div className="header-actions">
-                <button className="add-event-button" onClick={handleAddEventToggle}>
-                    {showAddEventForm ? "Cancel" : "Host an Event"}
-                </button>
-            </div>
-            {showAddEventForm && (
-                <form className="add-event-form" onSubmit={handleAddEventSubmit}>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Event Name"
-                        value={newEvent.name}
-                        onChange={handleAddEventChange}
-                        required
-                    />
-                    <input
-                        type="date"
-                        name="date"
-                        value={newEvent.date}
-                        onChange={handleAddEventChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="time"
-                        placeholder="Event Time"
-                        value={newEvent.time}
-                        onChange={handleAddEventChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="location"
-                        placeholder="Location"
-                        value={newEvent.location}
-                        onChange={handleAddEventChange}
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="tags"
-                        placeholder="Tags (comma separated)"
-                        value={newEvent.tags}
-                        onChange={handleAddEventChange}
-                    />
-                    <input
-                        type="text"
-                        name="image"
-                        placeholder="Image URL (optional)"
-                        value={newEvent.image}
-                        onChange={handleAddEventChange}
-                    />
-                    <button type="submit" className="submit-event-button">
-                        Add Event
-                    </button>
-                </form>
-            )}
-            <div className="filters">
+            {/* Header Section */}
+            <div className="header">
+                <h1>Welcome to EcoMissions</h1>
                 <input
                     type="text"
+                    className="search-bar"
                     placeholder="Search events"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="search-bar"
                 />
-                <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="category-filter"
-                >
-                    <option value="All">All Categories</option>
-                    <option value="Clean-Up">Clean-Up</option>
-                    <option value="Community">Community</option>
-                    <option value="Environment">Environment</option>
-                    <option value="Volunteer">Volunteer</option>
-                </select>
             </div>
-            <div className="event-list">
-                {filteredEvents.length > 0 ? (
-                    filteredEvents.map((event) => <EventCard key={event.id} event={event} />)
-                ) : (
-                    <p>No events found.</p>
-                )}
+
+            {/* Host an Event Section */}
+            <button
+                className="host-event-button"
+                onClick={() => setShowHostForm(!showHostForm)}
+            >
+                {showHostForm ? "Cancel" : "Host an Event"}
+            </button>
+
+            {showHostForm && (
+                <div className="host-event-form">
+                    <h2>Host an Event</h2>
+                    <input
+                        type="text"
+                        placeholder="Event Name"
+                        value={newEvent.name}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, name: e.target.value })
+                        }
+                    />
+                    <input
+                        type="date"
+                        value={newEvent.date}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, date: e.target.value })
+                        }
+                    />
+                    <input
+                        type="text"
+                        placeholder="Time"
+                        value={newEvent.time}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, time: e.target.value })
+                        }
+                    />
+                    <input
+                        type="text"
+                        placeholder="Location"
+                        value={newEvent.location}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, location: e.target.value })
+                        }
+                    />
+                    <textarea
+                        placeholder="Description"
+                        value={newEvent.description}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, description: e.target.value })
+                        }
+                        rows="4"
+                        style={{ resize: "none" }}
+                    ></textarea>
+                    <input
+                        type="text"
+                        placeholder="Image URL"
+                        value={newEvent.image}
+                        onChange={(e) =>
+                            setNewEvent({ ...newEvent, image: e.target.value })
+                        }
+                    />
+                    <button onClick={handleAddEvent}>Add Event</button>
+                </div>
+            )}
+
+            {/* Events Section */}
+            <div className="events-section">
+                <h2>Upcoming Events</h2>
+                <div className="event-list">
+                    {filteredEvents.length > 0 ? (
+                        filteredEvents.map((event) => (
+                            <EventCard key={event.id} event={event} />
+                        ))
+                    ) : (
+                        <p>No events found.</p>
+                    )}
+                </div>
             </div>
+
+            {/* Floating Action Button */}
+            <button className="floating-action-button" onClick={handleBackToHome}>
+                🏠
+            </button>
         </div>
     );
 };

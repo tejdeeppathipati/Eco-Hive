@@ -1,52 +1,92 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-import { auth, googleProvider, facebookProvider } from '../firebase/firebase';
-import './Signup.css';
-import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+    createUserWithEmailAndPassword,
+    signInWithPopup,
+    updateProfile,
+} from "firebase/auth";
+import { auth, googleProvider, facebookProvider, db } from "../firebase/firebase";
+import { doc, setDoc } from "firebase/firestore";
+import "./Signup.css";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 
 const Signup = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
-        setErrorMessage('');
+        setErrorMessage("");
         if (password !== confirmPassword) {
-            setErrorMessage('Passwords do not match.');
+            setErrorMessage("Passwords do not match.");
             return;
         }
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
-            alert('Account created successfully!');
-            navigate('/dashboard');
+            // Create user with email and password
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+            // Update user profile with their name
+            await updateProfile(userCredential.user, {
+                displayName: `${firstName} ${lastName}`,
+            });
+
+            // Save user details in Firestore
+            await setDoc(doc(db, "users", userCredential.user.uid), {
+                firstName,
+                lastName,
+                email,
+                createdAt: new Date(),
+            });
+
+            alert("Account created successfully!");
+            navigate("/dashboard");
         } catch (error) {
             setErrorMessage(`Signup Failed: ${error.message}`);
         }
     };
 
     const handleGoogleLogin = async () => {
-        setErrorMessage('');
+        setErrorMessage("");
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            alert(`Welcome ${result.user.displayName}!`);
-            navigate('/dashboard');
+
+            // Save Google user details in Firestore
+            const { uid, email, displayName } = result.user;
+            await setDoc(doc(db, "users", uid), {
+                firstName: displayName.split(" ")[0],
+                lastName: displayName.split(" ")[1] || "",
+                email,
+                createdAt: new Date(),
+            });
+
+            alert(`Welcome ${displayName}!`);
+            navigate("/dashboard");
         } catch (error) {
             setErrorMessage(`Google Signup Failed: ${error.message}`);
         }
     };
 
     const handleFacebookLogin = async () => {
-        setErrorMessage('');
+        setErrorMessage("");
         try {
             const result = await signInWithPopup(auth, facebookProvider);
-            alert(`Welcome ${result.user.displayName}!`);
-            navigate('/dashboard');
+
+            // Save Facebook user details in Firestore
+            const { uid, email, displayName } = result.user;
+            await setDoc(doc(db, "users", uid), {
+                firstName: displayName.split(" ")[0],
+                lastName: displayName.split(" ")[1] || "",
+                email,
+                createdAt: new Date(),
+            });
+
+            alert(`Welcome ${displayName}!`);
+            navigate("/dashboard");
         } catch (error) {
             setErrorMessage(`Facebook Signup Failed: ${error.message}`);
         }
@@ -103,25 +143,16 @@ const Signup = () => {
                     <span></span> or <span></span>
                 </div>
                 <div className="social-icons">
-                    <div className="social-row">
-                        <button className="social-btn google" onClick={handleGoogleLogin}>
-                            <FaGoogle className="social-icon" />
-                            Sign up with Google
-                        </button>
-                    </div>
-                    <div className="social-row">
-                        <button className="social-btn facebook" onClick={handleFacebookLogin}>
-                            <FaFacebook className="social-icon" />
-                            Sign up with Facebook
-                        </button>
-                    </div>
+                    <button className="social-btn google" onClick={handleGoogleLogin}>
+                        <FaGoogle /> Sign up with Google
+                    </button>
+                    <button className="social-btn facebook" onClick={handleFacebookLogin}>
+                        <FaFacebook /> Sign up with Facebook
+                    </button>
                 </div>
                 <p className="login-prompt">
-                    Already have an account?{' '}
-                    <span
-                        className="login-link"
-                        onClick={() => navigate('/')}
-                    >
+                    Already have an account?{" "}
+                    <span className="login-link" onClick={() => navigate("/")}>
                         Log In!
                     </span>
                 </p>
