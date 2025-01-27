@@ -5,7 +5,7 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBBjVuLEE8h7UOAImYu9dijwSLHX4Ns7HM",
+    apiKey: "xxx",
     authDomain: "hoyahack-e2d0a.firebaseapp.com",
     projectId: "hoyahack-e2d0a",
     storageBucket: "hoyahack-e2d0a.firebasestorage.app",
