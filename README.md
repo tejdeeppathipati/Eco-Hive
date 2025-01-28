@@ -15,7 +15,7 @@ EcoHive is a **comprehensive sustainability hub** that helps users:
 
 ---
 
-## 🏗️ **How We Built It**
+## 🏗️ **How it works**
 
 ### **Frontend**:
 - Built with **React.js** for a seamless, interactive, and responsive user interface.  
@@ -34,17 +34,8 @@ EcoHive is a **comprehensive sustainability hub** that helps users:
 - Built on **Firestore**, enabling scalable and efficient storage for user data, events, and progress tracking.  
 
 ### **UI Design**:
-- Focused on **eco-conscious visuals** using **CSS** for a nature-inspired design.  
-
----
-
-## 🔮 **Future Enhancements**
-- Expanding the **rewards system** through partnerships with eco-friendly brands.  
-- Improving **AI capabilities** for more accurate image recognition and personalized suggestions.  
-- Introducing **real-time notifications** to increase event participation.  
-- Adding a **social feed** where users can share their projects and inspire others.  
-- Incorporating **multi-language support** to make EcoHive accessible worldwide.  
-
+- Focused on **eco-conscious visuals** using **CSS** for a nature-inspired design.
+  
 ---
 
 ## 📷 **Screenshots**
